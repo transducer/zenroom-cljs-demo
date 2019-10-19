@@ -1,0 +1,16 @@
+{
+  "name": "zenroom-example",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.8.64"
+  },
+  "dependencies": {
+    "core-js": "3.1.4",
+    "create-react-class": "15.6.3",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "regenerator-runtime": "*",
+    "zenroom": "1.0.0"
+  }
+}
