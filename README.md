@@ -13,6 +13,33 @@ Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.githu
 ```
 lein clean
 npm i
+```
+
+As per [Make (L) with Zenroom and Javascript part 3](https://www.dyne.org/using-zenroom-with-javascript-react-part3/) 
+
+cp node_modules/zenroom/dist/lib/zenroom.wasm resources/public
+
+And in node_modules/zenroom/dist/lib/zenroom.js change
+
+```
+var wasmBinaryFile = 'zenroom.wasm';
+if (!isDataURI(wasmBinaryFile)) {
+  wasmBinaryFile = locateFile(wasmBinaryFile);
+}
+```
+
+to this
+
+```
+var wasmBinaryFile = '/zenroom.wasm';
+if (!isDataURI(wasmBinaryFile)) {
+  // wasmBinaryFile = locateFile(wasmBinaryFile);
+}
+```
+
+Then run
+
+```
 lein dev
 ```
 
