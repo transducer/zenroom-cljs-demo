@@ -1,8 +1,8 @@
-(ns zenroom-example.views
+(ns org.dyne.zenroom-example.views
   (:require
    [re-frame.core :as re-frame]
    [zenroom :default zenroom]
-   [zenroom-example.subs :as subs]))
+   [org.dyne.zenroom-example.subs :as subs]))
 
 (defn main-panel []
   (let [script "print(\"hello\")"

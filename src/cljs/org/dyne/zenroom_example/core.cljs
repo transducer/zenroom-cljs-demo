@@ -1,10 +1,10 @@
-(ns zenroom-example.core
+(ns org.dyne.zenroom-example.core
   (:require
    [reagent.core :as reagent]
    [re-frame.core :as re-frame]
-   [zenroom-example.events :as events]
-   [zenroom-example.views :as views]
-   [zenroom-example.config :as config]))
+   [org.dyne.zenroom-example.events :as events]
+   [org.dyne.zenroom-example.views :as views]
+   [org.dyne.zenroom-example.config :as config]))
 
 (defn dev-setup []
   (when config/debug?
