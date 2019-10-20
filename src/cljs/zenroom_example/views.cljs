@@ -5,12 +5,11 @@
    [zenroom-example.subs :as subs]))
 
 (defn main-panel []
-  [:div "hallo"]
-  #_(let [script "print(\"hello\")"
-        _ (.init zenroom)
+  (let [script "print(\"hello\")"
         zr (.zenroom_exec (.script zenroom script))
         debug (.__debug zenroom)]
-    [:div
+    [:<>
+     [:div "hallo"]
      [:div (js/Object.getOwnPropertyNames debug)]
      [:div (.-script debug)]
      [:div (js/Object.getOwnPropertyNames zenroom)]]))
