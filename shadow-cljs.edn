@@ -1,6 +1,7 @@
 {:lein   true
  :nrepl {:port 8777}
  :builds {:app {:target :browser
+                :build-hooks [(build/setup-zenroom-wasm-hook)]
                 :output-dir "resources/public/js/compiled"
                 :asset-path "/js/compiled"
                 :modules {:app {:init-fn org.dyne.zenroom-example.core/init
@@ -8,7 +9,7 @@
                 :devtools {:http-root "resources/public"
                            :http-port 8280}}
           :prod {:target :browser
-                 :build-hooks [(build/fix-zenroom-wasm-path-hook)]
+                 :build-hooks [(build/setup-zenroom-wasm-hook)]
                  :output-dir "resources/public/js/compiled"
                  :asset-path "/js/compiled"
                  :modules {:app {:entries [org.dyne.zenroom-example.core]}}}}}

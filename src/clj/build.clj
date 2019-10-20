@@ -24,7 +24,12 @@
       (println "Succesfully changed zenroom.js's zenroom.wasm path")
       (println "Failed to change zenroom.js's zenroom.wasm path - err: " err))))
 
-(defn fix-zenroom-wasm-path-hook
+(defn setup-zenroom-wasm-hook
+  "Perform the steps described in https://www.dyne.org/using-zenroom-with-javascript-react-part3/:
+
+  - Copy zenroom.wasm to resources/public
+  - Remove a line in zenroom.js glue code that tries to find the wasm file
+    locally (in node_modules)"
   {:shadow.build/stage :flush}
   [build-state]
   (copy-wasm-to-public)
