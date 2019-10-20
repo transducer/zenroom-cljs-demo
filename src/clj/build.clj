@@ -2,6 +2,15 @@
   (:require
    [clojure.java.shell :refer [sh]]))
 
+(def ^:dynamic *has-run?* false)
+
+(defmacro with-run-once
+  "Only evaluates `forms` once."
+  [& forms]
+  `(when-not *has-run?*
+     (alter-var-root #'*has-run?* (constantly true))
+     ~@forms))
+
 (defn- copy-wasm-to-public
   "Copies zenroom.wasm file to resources/public so that it is available in the
   build."
@@ -32,6 +41,8 @@
     locally (in node_modules)"
   {:shadow.build/stage :flush}
   [build-state]
-  (copy-wasm-to-public)
-  (remove-locate-wasm-locally-line)
+  ;; Only run once to prevent a recompile loop when shadow-cljs sees file changes
+  (with-run-once
+    (copy-wasm-to-public)
+    (remove-locate-wasm-locally-line))
   build-state)
