@@ -13,7 +13,6 @@ target
 
 # production
 /build
-src/cljs/
 
 # misc
 .DS_Store
