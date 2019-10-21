@@ -19,8 +19,8 @@
                                "node_modules/zenroom/dist/lib/zenroom.wasm"
                                "resources/public/")]
     (if (zero? exit)
-      (println "Succesfully copied zenroom.wasm to resources/public")
-      (println "Failed to copy zenroom.wasm to resources/public - err: " err))))
+      (println "Copied zenroom.wasm to resources/public")
+      (println "Failure in copy zenroom.wasm to resources/public - err: " err))))
 
 (defn- remove-locate-wasm-locally-line
   "In the zenroom.js's node_module there's a line that tries to retrieve the wasm
@@ -30,8 +30,8 @@
   (let [{:keys [exit err]} (sh "sed" "-i.bak" "/wasmBinaryFile = locateFile/d"
                                "node_modules/zenroom/dist/lib/zenroom.js")]
     (if (zero? exit)
-      (println "Succesfully changed zenroom.js's zenroom.wasm path")
-      (println "Failed to change zenroom.js's zenroom.wasm path - err: " err))))
+      (println "Changed zenroom.js's zenroom.wasm path")
+      (println "Failure in change zenroom.js's zenroom.wasm path - err: " err))))
 
 (defn setup-zenroom-wasm-hook
   "Perform the steps described in https://www.dyne.org/using-zenroom-with-javascript-react-part3/:
