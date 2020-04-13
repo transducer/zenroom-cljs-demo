@@ -4,12 +4,18 @@
    [zenroom :default zenroom]
    [org.dyne.zenroom-example.subs :as subs]))
 
+(defn property-names [obj]
+  (->> obj
+       js/Object.getOwnPropertyNames
+       js->clj
+       (interpose ", ")
+       (apply str)))
+
 (defn main-panel []
-  (let [script "print(\"hello\")"
-        zr (.zenroom_exec (.script zenroom script))
+  (let [script "print(\"hello from zenroom\")"
+        zr (.zenroom_exec (.script (.print zenroom (fn [s] (println "hallo" s))) script))
         debug (.__debug zenroom)]
     [:<>
-     [:div "hallo"]
-     [:div (js/Object.getOwnPropertyNames debug)]
+     [:div (property-names debug)]
      [:div (.-script debug)]
-     [:div (js/Object.getOwnPropertyNames zenroom)]]))
+     [:div (property-names zenroom)]]))

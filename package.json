@@ -11,6 +11,6 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "regenerator-runtime": "*",
-    "zenroom": "1.0.0"
+    "zenroom": "1.0.5"
   }
 }
