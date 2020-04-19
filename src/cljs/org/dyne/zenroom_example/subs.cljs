@@ -1,8 +1,10 @@
 (ns org.dyne.zenroom-example.subs
   (:require
+   [org.dyne.zenroom-example.db :as db]
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- ::name
+ ::zenroom-results
  (fn [db]
-   (:name db)))
+   (println ::results {:db db})
+   (::db/zenroom-results db)))

@@ -1,21 +1,14 @@
 (ns org.dyne.zenroom-example.views
   (:require
-   [re-frame.core :as re-frame]
-   [zenroom :default zenroom]
-   [org.dyne.zenroom-example.subs :as subs]))
-
-(defn property-names [obj]
-  (->> obj
-       js/Object.getOwnPropertyNames
-       js->clj
-       (interpose ", ")
-       (apply str)))
+   [clojure.string :as string]
+   [org.dyne.zenroom-example.events :as events]
+   [org.dyne.zenroom-example.subs :as subs]
+   [re-frame.core :as re-frame]))
 
 (defn main-panel []
-  (let [script "print(\"hello from zenroom\")"
-        zr (.zenroom_exec (.script (.print zenroom (fn [s] (println "hallo" s))) script))
-        debug (.__debug zenroom)]
+  (let [input (atom "")
+        results (re-frame/subscribe [::subs/zenroom-results])]
     [:<>
-     [:div (property-names debug)]
-     [:div (.-script debug)]
-     [:div (property-names zenroom)]]))
+     [:input {:on-change (fn [e] (reset! input (-> e .-target .-value)))}]
+     [:button {:on-click #(re-frame/dispatch [::events/script-submitted @input])} "Evaluate"]
+     [:textarea {:value (string/join "\n" @results) :read-only true}]]))

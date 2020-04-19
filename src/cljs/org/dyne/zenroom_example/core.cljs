@@ -3,6 +3,7 @@
    [org.dyne.zenroom-example.config :as config]
    [org.dyne.zenroom-example.events :as events]
    [org.dyne.zenroom-example.views :as views]
+   [re-frame.core :as re-frame]
    [reagent.core :as reagent]))
 
 (defn dev-setup []
@@ -14,5 +15,6 @@
                   (.getElementById js/document "app")))
 
 (defn ^:export init []
+  (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
   (mount-root))
