@@ -8,3 +8,8 @@
  (fn [db]
    (println ::results {:db db})
    (::db/zenroom-results db)))
+
+(re-frame/reg-sub
+ ::zenroom-success?
+ (fn [db]
+   (::db/zenroom-success? db)))

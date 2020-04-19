@@ -7,8 +7,11 @@
 
 (defn main-panel []
   (let [input (atom "")
+        success? (re-frame/subscribe [::subs/zenroom-success?])
         results (re-frame/subscribe [::subs/zenroom-results])]
     [:<>
-     [:input {:on-change (fn [e] (reset! input (-> e .-target .-value)))}]
+     [:textarea {:on-change (fn [e] (reset! input (-> e .-target .-value)))}]
      [:button {:on-click #(re-frame/dispatch [::events/script-submitted @input])} "Evaluate"]
-     [:textarea {:value (string/join "\n" @results) :read-only true}]]))
+     [:textarea {:value (string/join "\n" @results) :read-only true}]
+     [:div "Compiles?"]
+     [:div {:style {:background-color (if @success? "green" "red") :height "30px" :width "30px"}}]]))
