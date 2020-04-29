@@ -4,8 +4,7 @@
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library]]
                  [thheller/shadow-cljs "2.8.98"]
-                 [reagent "0.10.0"]
-                 [re-frame "0.12.0"]]
+                 [reagent "0.10.0"]]
   :plugins []
   :min-lein-version "2.5.3"
   :jvm-opts ["-Xmx1G"]
