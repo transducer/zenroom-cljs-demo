@@ -1,6 +1,5 @@
 (ns build
   (:require
-   [clojure.string :as string]
    [clojure.java.shell :refer [sh]]))
 
 (defn- copy-wasm-to-public
@@ -25,20 +24,14 @@
       (println "Changed zenroom.js's zenroom.wasm path")
       (println "Failure in change zenroom.js's zenroom.wasm path - err: " err))))
 
-(defn already-setup? []
-  (let [{:keys [out]} (sh "ls" "resources/public")]
-    (string/includes? out "zenroom.wasm")))
-
 (defn setup-zenroom-wasm-hook
   "Perform the steps described in https://www.dyne.org/using-zenroom-with-javascript-react-part3/:
 
   - Copy zenroom.wasm to resources/public
   - Remove a line in zenroom.js glue code that tries to find the wasm file
     locally (in node_modules)"
-  {:shadow.build/stage :flush}
+  {:shadow.build/stage :compile-prepare}
   [build-state]
-  ;; Only run once to prevent a recompile loop when shadow-cljs sees file changes
-  (when-not (already-setup?)
-    (copy-wasm-to-public)
-    (remove-locate-wasm-locally-line))
+  (copy-wasm-to-public)
+  (remove-locate-wasm-locally-line)
   build-state)
