@@ -30,7 +30,7 @@
   - Copy zenroom.wasm to resources/public
   - Remove a line in zenroom.js glue code that tries to find the wasm file
     locally (in node_modules)"
-  {:shadow.build/stage :compile-prepare}
+  {:shadow.build/stage :configure}
   [build-state]
   (copy-wasm-to-public)
   (remove-locate-wasm-locally-line)
