@@ -1,6 +1,6 @@
 # zenroom-example
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to work with the Zenroom npm package.
+A [Reagent](reagent-project.github.io/) application designed to work with the Zenroom npm package.
 
 ## Development Mode
 

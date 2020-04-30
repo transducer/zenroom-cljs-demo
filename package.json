@@ -8,9 +8,9 @@
   "dependencies": {
     "core-js": "3.1.4",
     "create-react-class": "15.6.3",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "regenerator-runtime": "*",
-    "zenroom": "1.0.5"
+    "zenroom": "1.1.0"
   }
 }
