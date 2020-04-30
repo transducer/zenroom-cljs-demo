@@ -5,6 +5,7 @@
 
 # build
 resources/public/js
+resources/public/zenroom.wasm
 .shadow-cljs
 target
 
