@@ -1,5 +1,7 @@
-{:lein   true
- :nrepl {:port 8777}
+{:nrepl {:port 8777}
+ :source-paths ["src/clj" "src/cljs"]
+ :dependencies [[binaryage/devtools "1.0.0"]
+                [reagent "0.10.0"]]
  :builds {:app {:target :browser
                 :build-hooks [(build/setup-zenroom-wasm-hook)]
                 :output-dir "resources/public/js/compiled"

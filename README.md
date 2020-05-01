@@ -6,9 +6,8 @@ A [Reagent](reagent-project.github.io/) application designed to work with the Ze
 
 ### Run application:
 
-    lein clean
     npm i
-    lein dev
+    shadow-cljs watch app
 
 shadow-cljs will automatically push cljs changes to the browser.
 
