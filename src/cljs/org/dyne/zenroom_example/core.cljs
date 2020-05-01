@@ -38,7 +38,7 @@
          [:h2.subtitle.is-2 "Data"]
          [:textarea.textarea {:rows 3 :on-change (fn [e] (reset! DATA (-> e .-target .-value)))}]
          [:h2.subtitle.is-2 "Output"]
-         [:textarea.textarea.has-background-dark.has-text-white
+         [:textarea.textarea.has-background-dark.has-text-success
           {:rows 10 :value (string/join "\n" @results) :read-only true}]]]])))
 
 (defn ^:export ^:dev/after-load init []
