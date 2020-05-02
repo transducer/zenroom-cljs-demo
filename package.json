@@ -1,5 +1,6 @@
 {
   "name": "zenroom-cljs-demo",
+  "private": true,
   "version": "0.0.1",
   "devDependencies": {
     "shadow-cljs": "2.8.109"
