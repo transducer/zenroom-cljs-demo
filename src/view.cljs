@@ -17,8 +17,8 @@
 (defn evaluate! []
   (doto zenroom
     (.script (:input @app-state))
-    (.keys (clj->js (read-string (:keys @app-state))))
-    (.data (clj->js (read-string (:data @app-state))))
+    (.keys (-> @app-state :keys read-string clj->js))
+    (.data (-> @app-state :data read-string clj->js))
     (.print (fn [s] (swap! app-state update :results conj s)))
     (.success (fn [] (swap! app-state assoc :success? true)))
     (.error (fn [] (swap! app-state assoc :success? false)))

@@ -96,6 +96,7 @@ Your `package.json` file now looks something like this:
 ```javascript
 {
   "name": "zenroom-example",
+  "private": true,
   "devDependencies": {
     "shadow-cljs": "2.8.109"
   },
@@ -230,8 +231,8 @@ Now we can write a function `evaluate!` that will evaluate the Zencode put into 
 (defn evaluate! []
   (doto zenroom
     (.script (:input @app-state))
-    (.keys (clj->js (read-string (:keys @app-state))))
-    (.data (clj->js (read-string (:data @app-state))))
+    (.keys (-> @app-state :keys read-string clj->js))
+    (.data (-> @app-state :data read-string clj->js))
     (.print (fn [s] (swap! app-state update :results conj s)))
     (.success (fn [] (swap! app-state assoc :success? true)))
     (.error (fn [] (swap! app-state assoc :success? false)))
