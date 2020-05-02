@@ -21,7 +21,6 @@ Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.githu
 
 Run
 
-    lein clean
-    shadow-cljs release prod
+    shadow-cljs release app
 
 Compiled frontend will be available in `resources/public`.

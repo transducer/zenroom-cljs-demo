@@ -1,12 +1,12 @@
 {:nrepl {:port 8777}
- :source-paths ["src/clj" "src/cljs"]
+ :source-paths ["src"]
  :dependencies [[binaryage/devtools "1.0.0"]
-                [reagent "0.10.0"]]
+                [reagent "1.0.0-alpha1"]]
  :builds {:app {:target :browser
                 :build-hooks [(build/setup-zenroom-wasm-hook)]
                 :output-dir "resources/public/js/compiled"
                 :asset-path "/js/compiled"
-                :modules {:app {:init-fn org.dyne.zenroom-example.core/init
+                :modules {:app {:init-fn view/init
                                 :preloads [devtools.preload]}}
                 :devtools {:http-root "resources/public"
                            :http-port 8280}} }}
