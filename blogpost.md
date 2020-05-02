@@ -363,7 +363,7 @@ Phew, we have not been near an infected device.
 Note that the example above is better suited for a portable device that also has access to promimity information via for example Bluetooth.
 And note that we could be connected with a central database or [distributed ledger](https://zenroom.org/zenbridge/) to pick up the information on infected devices and also broadcast our own if we get infected. 
 
-Finally, if we would look in the console we see stdout and stderr messages coming out of the WebAssembly:
+Anyhow, if we would look in the console we see stdout and stderr messages coming out of the WebAssembly:
 
 ![WebAssembly output](resources/images/wasm-output.png)
 
