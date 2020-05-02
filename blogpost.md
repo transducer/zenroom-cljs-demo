@@ -348,11 +348,13 @@ This command can also be run from inside an editor with `shadow-cljs` support so
 
 After we have started watching the app we can visit [http://localhost:8280/](http://localhost:8280/). Here we see our own ClojureScript Zenroom demo environment. 
 
-Let's follow the steps from [Decentralized Privacy-Preserving Proximity Tracing crypto made easy](https://medium.com/@jaromil/decentralized-privacy-preserving-proximity-tracing-cryptography-made-easy-af0a6ae48640) and:
+Let's follow the steps from [Decentralized Privacy-Preserving Proximity Tracing crypto made easy](https://medium.com/@jaromil/decentralized-privacy-preserving-proximity-tracing-cryptography-made-easy-af0a6ae48640):
 
 1. Setup a secret day key (SK)
 1. Create a list of Ephemeral IDs (EphIDs)
 1. Check the proximity to "infected" devices
+
+in the running app:
 
 ![Example](resources/images/example.gif)
 
