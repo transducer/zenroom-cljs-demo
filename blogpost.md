@@ -244,9 +244,9 @@ Now we can write a function `evaluate!` that will evaluate the Zencode put into 
 -`keys` and `data` deref the `app-state` and parse it to a JavaScript data structure to add the KEYS and DATA.
 - `print` is the function that is called any time Zencode prints something, in this case it will append the output to the value of the`:results` key, a vector that holds the results.
 - `success` and `error` update the value for the`:success?` key in `app-state` with success or failure.
-- `zencode_exec` is called to evaluate the given Zencode contract. Zencode uses underlying Lua code. See for example the the [zencode_dp3t](https://github.com/DECODEproject/Zenroom/blob/master/src/lua/zencode_dp3t.lua)] extension as mentioned in the blogpost [Decentralized Privacy-Preserving Proximity Tracing crypto made easy](https://medium.com/@jaromil/decentralized-privacy-preserving-proximity-tracing-cryptography-made-easy-af0a6ae48640). The simpler Zencode DSL calls Lua code. To execute Lua code instead of using the primitives available in Zencode we can call `zenroom_exec` instead of `zencode_exec` on the Zenroom object.
+- `zencode_exec` is called to evaluate the given Zencode contract. Zencode uses underlying Lua code. See for example the the [zencode_dp3t](https://github.com/DECODEproject/Zenroom/blob/master/src/lua/zencode_dp3t.lua) extension as mentioned in the blogpost [Decentralized Privacy-Preserving Proximity Tracing crypto made easy](https://medium.com/@jaromil/decentralized-privacy-preserving-proximity-tracing-cryptography-made-easy-af0a6ae48640). The simpler Zencode DSL calls Lua code. To execute Lua code instead of using the primitives available in Zencode we can call `zenroom_exec` instead of `zencode_exec` on the Zenroom object.
 
-`evaluate` is the gist of the interaction with the Zenroom VM, now we have to get the information in and out of the `app-state`.
+`evaluate!` is the gist of the interaction with the Zenroom VM, now we have to get the information in and out of the `app-state`.
 
 First let's add a method to clear the results:
 
