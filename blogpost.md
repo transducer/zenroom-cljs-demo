@@ -69,7 +69,7 @@ npm install -g shadow-cljs --save-dev
 yarn global add shadow-cljs --dev
 ```
 
-This also creates an entry in `package.json` for shadow-cljs as a dev dependency, which is necessary for development.
+This also creates a devDependencies entry in `package.json` for shadow-cljs, which is necessary for development.
 
 Then install the React dependencies Reagent will need later:
 
@@ -225,7 +225,7 @@ Besides Zencode input, the Zenroom VM also takes KEYS and DATA as JSON input. Ze
 
 `:success` will indicate if compilation of the provided `:input` was successful or not, and `:results` will contain the printed output of the Zencode script.
 
-Now we can write a function `evaluate!` that will evaluate the Zencode put into our demo enviroment. Using `doto` we use method chaining to set all the values. Another way would be to pass a JavaScript options object containing the same keys and values.
+Now we can write a function `evaluate!` that will evaluate the Zencode put into our demo environment. Using `doto` we use method chaining to set all the values. Another way would be to pass a JavaScript options object containing the same keys and values to the Zenroom's module `init` method.
 
 ```clojure
 (defn evaluate! []
@@ -276,10 +276,10 @@ Now we can add a Bulma column for a Zencode input textarea:
 
 Here we have:
 1. A textarea that puts its contents into the `app-state`
-1. A button "Evaluate" that clears possible previous results via `clear!` and calls `evaluate!` to evaluate the Zencode using the Zenroom npm module.
+1. A button "Evaluate" that clears possible previous results via `clear!` and calls `evaluate!` to evaluate the Zencode using the Zenroom VM via the Zenroom npm module.
 1. A checkbox that is checked if the code compiles and vice versa.
 
-For obtaining the KEYS and DATA we write code analagous to that for the Zencode input. And we show the results on the page in a textarea that looks like a terminal using a dark background and green letters:
+For obtaining the KEYS and DATA we write code analogous to that for the Zencode input. And we show the results on the page in a textarea that looks like a terminal using a dark background and green letters:
 
 ```clojure
 (defn keys-data-results-column []
@@ -298,7 +298,7 @@ For obtaining the KEYS and DATA we write code analagous to that for the Zencode 
 
 ```
 
-Note that KEYS and DATA have to be added into the textarea as [EDN data structures](https://github.com/edn-format/edn), and not JSON (so when adding data their strip off the `:`s).
+Note that KEYS and DATA have to be added into the textarea as [EDN data structures](https://github.com/edn-format/edn), and not JSON. So when adding data in the textarea to be read via `read-string` strip off the `:`s so that it's valid EDN.
 
 Finally, we create an embedding panel and load that onto the page using Reagent's `render` function.
 
@@ -376,10 +376,10 @@ Now that we have a running application we can create a production build and depl
 
 ## 🔥 Production build
 
-To create a minified release build (a single `app.js`) that has stripped out all development related code and has run the code through the [Google Closure Compiler](https://developers.google.com/closure/compiler) use `shadow-cljs release app`. Compiled frontend code will be available in `resources/public` and can be deployed as a static website using your webserver of choice.
+To create a minified release build (a single `app.js`) that has stripped out all development related code and has run the code through the [Google Closure Compiler](https://developers.google.com/closure/compiler) use `shadow-cljs release app`. Compiled frontend code will be available in `resources/public` and can be deployed as a static website using your web server of choice.
 
 ## ☕ Conclusion
 
-With the right configuration we can run Zenroom from ClojureScript tooling thanks to the Zenroom npm package with JavaScript bindings.
+With the right configuration we can embed the Zenroom VM in ClojureScript tooling thanks to the Zenroom npm package with JavaScript bindings.
 
 The source code of the full example is available at [https://www.github.com/transducer/zenroom-cljs-demo](https://www.github.com/transducer/zenroom-cljs-demo).
