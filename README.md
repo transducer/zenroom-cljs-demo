@@ -1,6 +1,6 @@
 # zenroom-cljs-demo
 
-A [Reagent](reagent-project.github.io/) application designed to work with the Zenroom npm package.
+A [Reagent](reagent-project.github.io/) application designed to work with the [Zenroom](https://zenroom.org/) [npm package](https://www.npmjs.com/package/zenroom) and [shadow-cljs](https://shadow-cljs.org/).
 
 ## Development Mode
 
