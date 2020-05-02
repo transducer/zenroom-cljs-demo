@@ -20,14 +20,14 @@ shadow-cljs will automatically push cljs changes to the browser.
 
 Wait a bit, then browse to [http://localhost:8280](http://localhost:8280).
 
-### Start shadow-cljs from Emacs, Visual Studio Code, Eclipse, IntelliJ or Vim:
+### shadow-cljs editor integration:
 
-Refer to the
+Refer to the [shadow-cljs Editor Integration documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#_editor_integration).
 
-- [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.github.io/docs/UsersGuide.html#cider).
-- [Visual Studio Code with Calva documentation](https://github.com/BetterThanTomorrow/calva/blob/master/docs/readthedocs/source/jack-in-guide.md)
-- [IntelliJ or Eclipse with Cursive documentation](https://cursive-ide.com/) 
-- [Vim with Fireplace documentation](https://github.com/tpope/vim-fireplace).
+- [shadow-cljs Emacs / CIDER](https://shadow-cljs.github.io/docs/UsersGuide.html#cider)
+- [Visual Studio Code with Calva](https://github.com/BetterThanTomorrow/calva/blob/master/docs/readthedocs/source/jack-in-guide.md)
+- [IntelliJ or Eclipse with Cursive](https://cursive-ide.com/) 
+- [Vim with Fireplace](https://github.com/tpope/vim-fireplace).
 
 ## Production Build
 
