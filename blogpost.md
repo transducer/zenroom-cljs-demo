@@ -376,7 +376,7 @@ Now that we have a running application we can create a production build and depl
 
 ## 🔥 Production build
 
-To create a minified release build (a single `app.js`) that has stripped out all development related code and has run the code through the [Google Closure Compiler](https://developers.google.com/closure/compiler) use `shadow-cljs release app`. Put the `index.html` and `zenroom.wasm` next to the `js/compiled/app.js` and you can deploy the static website using your webserver of choice.
+To create a minified release build (a single `app.js`) that has stripped out all development related code and has run the code through the [Google Closure Compiler](https://developers.google.com/closure/compiler) use `shadow-cljs release app`. Compiled frontend code will be available in `resources/public` and can be deployed as a static website using your webserver of choice.
 
 ## ☕ Conclusion
 
