@@ -33,7 +33,7 @@ Now, if you came here for Zenroom and JavaScript, let's introduce ClojureScript.
 
 <img src="https://i.redd.it/jxqnywxi8pw31.jpg" alt="clj" width="25%"/>
 
-ClojureScript consists of immutable data structures and pure functions, primitives to encapsulate state, interoperability with the host (JavaScript) and data-driven DSLs via macros. When ClojureScript is combined with React we access [a pure Clojure world where views are functions of application state](https://medium.com/@jacekschae/learn-how-to-build-functional-front-ends-with-clojurescript-and-react-733fa260dd6b).
+ClojureScript consists of immutable data structures and pure functions, primitives to encapsulate state, interoperability with the host (JavaScript) and data-driven DSLs via macros. When ClojureScript is combined with React we access [a pure Clojure world where the view is a function of application state](https://medium.com/@jacekschae/learn-how-to-build-functional-front-ends-with-clojurescript-and-react-733fa260dd6b).
 
 In this demo we'll use [Reagent](https://reagent-project.github.io/), a minimalistic interface between ClojureScript and React. And [shadow-cljs](https://shadow-cljs.org/) as the build tool that integrates with `npm` and supports hot code reloading.
 
