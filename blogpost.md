@@ -279,7 +279,7 @@ Here we have:
 1. A button "Evaluate" that clears possible previous results via `clear!` and calls `evaluate!` to evaluate the Zencode using the Zenroom npm module.
 1. A checkbox that is checked if the code compiles and vice versa.
 
-For obtaining the keys and data we write code analagous to that for the Zencode input. And we show the results on the page in a textarea that looks like a terminal using a dark background and green letters:
+For obtaining the KEYS and DATA we write code analagous to that for the Zencode input. And we show the results on the page in a textarea that looks like a terminal using a dark background and green letters:
 
 ```clojure
 (defn keys-data-results-column []
@@ -298,7 +298,7 @@ For obtaining the keys and data we write code analagous to that for the Zencode 
 
 ```
 
-Note that KEYS and DATA have to be added as [EDN data structures](https://github.com/edn-format/edn), and not JSON (so strip off the `:`s).
+Note that KEYS and DATA have to be added into the textarea as [EDN data structures](https://github.com/edn-format/edn), and not JSON (so when adding data their strip off the `:`s).
 
 Finally, we create an embedding panel and load that onto the page using Reagent's `render` function.
 
