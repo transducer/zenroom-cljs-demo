@@ -377,6 +377,6 @@ To create a minified release build (a single `app.js`) that has stripped out all
 
 ## ☕ Conclusion
 
-With the right configuration we can run Zenroom easily from ClojureScript tooling thanks to the npm package with JavaScript bindings. 
+With the right configuration we can run Zenroom from ClojureScript tooling thanks to the Zenroom npm package with JavaScript bindings.
 
 The source code of the full example is available at [https://www.github.com/transducer/zenroom-example](https://www.github.com/transducer/zenroom-example).
