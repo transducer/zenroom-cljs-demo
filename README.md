@@ -1,4 +1,4 @@
-# zenroom-example
+# zenroom-cljs-demo
 
 A [Reagent](reagent-project.github.io/) application designed to work with the Zenroom npm package.
 
@@ -6,8 +6,15 @@ A [Reagent](reagent-project.github.io/) application designed to work with the Ze
 
 ### Run application:
 
-    npm i
-    shadow-cljs watch app
+```shell
+# npm
+npm instal
+
+# yarn
+yarn
+
+shadow-cljs watch app
+```
 
 shadow-cljs will automatically push cljs changes to the browser.
 
@@ -21,6 +28,8 @@ Refer to the [shadow-cljs Emacs / CIDER documentation](https://shadow-cljs.githu
 
 Run
 
-    shadow-cljs release app
+```shell
+shadow-cljs release app
+```
 
 Compiled frontend will be available in `resources/public`.

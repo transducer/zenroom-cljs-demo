@@ -344,7 +344,7 @@ To run the app with hot code reloading (when a file changes it is compiled and l
 shadow-cljs watch app
 ```
 
-This command can also be run from inside an editor with `shadow-cljs` support so that we can connect a REPL to the running application. This can be done with for example [Emacs with CIDER](https://cider.mx/), [Visual Studio Code with Calva](https://github.com/BetterThanTomorrow/calva/blob/master/docs/readthedocs/source/jack-in-guide.md), [IntelliJ or Eclipse with Cursive](https://cursive-ide.com/) or [Vim with Fireplace](https://github.com/tpope/vim-fireplace).
+This command can also be run from inside an editor with shadow-cljs support so that we can connect a REPL to the running application. This can be done with for example [Emacs with CIDER](https://cider.mx/), [Visual Studio Code with Calva](https://github.com/BetterThanTomorrow/calva/blob/master/docs/readthedocs/source/jack-in-guide.md), [IntelliJ or Eclipse with Cursive](https://cursive-ide.com/) or [Vim with Fireplace](https://github.com/tpope/vim-fireplace).
 
 After we have started watching the app we can visit [http://localhost:8280/](http://localhost:8280/). Here we see our own ClojureScript Zenroom demo environment. 
 
@@ -381,4 +381,4 @@ To create a minified release build (a single `app.js`) that has stripped out all
 
 With the right configuration we can run Zenroom from ClojureScript tooling thanks to the Zenroom npm package with JavaScript bindings.
 
-The source code of the full example is available at [https://www.github.com/transducer/zenroom-example](https://www.github.com/transducer/zenroom-example).
+The source code of the full example is available at [https://www.github.com/transducer/zenroom-cljs-demo](https://www.github.com/transducer/zenroom-cljs-demo).
