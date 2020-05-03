@@ -12,7 +12,11 @@ And also note this [React Zenroom example application](https://github.com/dyne/z
 
 ---
 
-If you came here because of ClojureScript, let's first introduce Zenroom.
+Using Zenroom from ClojureScript is simple once you know how to do it, but can take some time if you don't know the right configuration. Here's a TL;DR:
+
+*TL;DR: Add Zenroom's and React's npm package and their dependencies to package.json, setup build configuration including the copying of zenroom.wasm to resources, remove a line that retrieves wasm locally from Zenroom.js, and use JavaScript interop to require and set the Zenroom's module options. See code at [zenroom-cljs-demo](https://www.github.com/transducer/zenroom-cljs-demo).*
+
+After having introduced Zenroom and Clojurescript, we'll do the above step by step.
 
 ## ☯ Zenroom
 
@@ -172,7 +176,7 @@ Next we'll look at the view and its Reagent components.
 
 ## ⚛ The view
 
-We want to create a simple website where we can pass Zencode to the Zenroom VM and get the results. 
+We'll create a simple website where we can pass Zencode to the Zenroom VM and get the results. 
 
 First ensure we have an `index.html` page, create one in `resources/public` with the following content:
 
