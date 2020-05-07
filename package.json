@@ -1,16 +1,25 @@
 {
-  "name": "zenroom-cljs-demo",
-  "private": true,
-  "version": "0.0.1",
-  "devDependencies": {
-    "shadow-cljs": "2.8.109"
-  },
+  "name": "zenroom-example",
+  "version": "1.0.0",
+  "description": "A [ClojureScript](https://clojurescript.org/) [Reagent](reagent-project.github.io/) application designed to work with the [Zenroom](https://zenroom.org/) [npm package](https://www.npmjs.com/package/zenroom) and [shadow-cljs](https://shadow-cljs.org/).",
+  "main": "index.js",
   "dependencies": {
-    "core-js": "3.1.4",
-    "create-react-class": "^15.6.3",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "regenerator-runtime": "^0.13.5",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "zenroom": "^1.1.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transducer/zenroom-cljs-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/transducer/zenroom-cljs-demo/issues"
+  },
+  "homepage": "https://github.com/transducer/zenroom-cljs-demo#readme"
 }

@@ -75,24 +75,14 @@ yarn global add shadow-cljs --dev
 
 This also creates a devDependencies entry in `package.json` for shadow-cljs, which is necessary for development.
 
-Then install the React dependencies Reagent will need later:
+And now let's also add Zenroom:
 
 ```sh
 # npm
-npm install react@16.13.0 react-dom@16.13.0 create-react-class
+npm install zenroom
 
 # yarn
-yarn add react@16.13.0 react-dom@16.13.0 create-react-class
-```
-
-And now let's also add Zenroom and [the dependencies used by Zenroom](https://github.com/DECODEproject/Zenroom/blob/master/bindings/javascript/package.json#L49) so that shadow-cljs works without complaints:
-
-```sh
-# npm
-npm install zenroom core-js@3.1.4 regenerator-runtime
-
-# yarn
-yarn add zenroom core-js@3.14 regenerator-runtime
+yarn add zenroom
 ```
 
 Your `package.json` file now looks something like this:
