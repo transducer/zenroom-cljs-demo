@@ -4,6 +4,7 @@
   "description": "A [ClojureScript](https://clojurescript.org/) [Reagent](reagent-project.github.io/) application designed to work with the [Zenroom](https://zenroom.org/) [npm package](https://www.npmjs.com/package/zenroom) and [shadow-cljs](https://shadow-cljs.org/).",
   "main": "index.js",
   "dependencies": {
+    "core-js": "^3.1.4",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "zenroom": "^1.1.0"
