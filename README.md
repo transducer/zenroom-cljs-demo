@@ -7,7 +7,7 @@ A [ClojureScript](https://clojurescript.org/) [Reagent](reagent-project.github.i
 ### Run application:
 
 ```shell
-# npm install -g shadow-cljs / yarn add global shadow-cljs
+# npm install -g shadow-cljs / yarn global add shadow-cljs
 shadow-cljs watch app
 ```
 
